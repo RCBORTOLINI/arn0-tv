@@ -803,18 +803,22 @@ html.preview, html.preview body {
     right: var(--edge);
     bottom: 48px;
     display: flex;
-    gap: 40px;
     font-size: 22px;
     color: #a3a8b3;
 }
+
+/* Margins rather than flex `gap`, which Chromium only supports from 84; a 2020 TV (Tizen 5.5)
+   runs Chromium 69 and would draw these touching. Same for the other flex rows below. */
+.hints > * + * { margin-left: 40px; }
 
 .hints.hidden { display: none; }
 
 .hint {
     display: flex;
     align-items: center;
-    gap: 12px;
 }
+
+.hint > * + * { margin-left: 12px; }
 
 .hint-key {
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -855,8 +859,9 @@ html.preview, html.preview body {
     top: 420px;
     left: var(--edge);
     display: flex;
-    gap: 36px;
 }
+
+.probe-row > * + * { margin-left: 36px; }
 
 .probe-tile {
     width: 300px;
@@ -945,7 +950,6 @@ html.preview, html.preview body {
     display: flex;
     /* Bottom-aligned so the weather detail and the date share a baseline. */
     align-items: flex-end;
-    gap: 36px;
     transition: transform 1200ms ease-out;
 }
 
@@ -960,6 +964,7 @@ html.preview, html.preview body {
 
 /* Only drawn when there is a reading to divide it from. */
 .ss-clock.with-weather .ss-clock-main {
+    margin-left: 36px;
     border-left: 1px solid rgba(220, 224, 232, 0.22);
     padding-left: 36px;
 }
@@ -986,8 +991,9 @@ html.preview, html.preview body {
 .ss-wx-now {
     display: flex;
     align-items: center;
-    gap: 14px;
 }
+
+.ss-wx-now > * + * { margin-left: 14px; }
 
 .ss-wx-icon svg {
     display: block;
