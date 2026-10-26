@@ -16,10 +16,11 @@ window.LAUNCHER_CONFIG = {
         { id: 'xvvl3S1TT1.TizenTubeStandalone', label: 'YouTube', brand: 'youtube' },
         { id: 'rJeHak5zRg.Spotify', label: 'Spotify' },
         { id: 'Jz7aUrV2Q4.Twitch', label: 'Twitch' },
-        { id: 'E0P3lRI4H7.MYTF1', label: 'TF1+' },
+        { match: 'globoplay', label: 'Globoplay', brand: 'globoplay' },
         { id: 'org.tizen.netflix-app', label: 'Netflix' },
         { id: 'org.tizen.primevideo', label: 'Prime Video' },
         { id: 'MCmYXNxgcu.DisneyPlus', label: 'Disney+' },
+        { match: '(^|\\s)max(\\s|$)|hbo', label: 'Max', brand: 'max' },
         { id: 'com.samsung.tv.aria-video', label: 'Apple TV' }
     ],
 
@@ -35,7 +36,7 @@ window.LAUNCHER_CONFIG = {
     //   'inapp'          show the input full screen inside the launcher (Back returns)
     inputMethod: 'switch+viewer',
 
-    locale: 'en-GB',
+    locale: 'pt-BR',
 
     theme: {
         // Starting wallpaper (key from js/wallpapers.js), or null for none (plain gradient).
